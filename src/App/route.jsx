@@ -1,15 +1,23 @@
 import React from 'react'
-import {Switch, Route} from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 
 import RegisterTravel from "./modules/Travels/register-trip/RegisterTravelComponent";
+import Home from "./modules/layout/components/welcome-message-component/WelcomeMessageComponent";
 
 const Routes = () => {
     return (
         <Switch>
             <Route
-                exact path="/Travel/RegisterTravel"
-                component={<RegisterTravel />}
+                exact
+                path="/Home"
+                component={Home}
             />
+            <Route
+                exact
+                path="/Travel/RegisterTravel/:id"
+    component={RegisterTravel}
+            />
+            <Redirect to="/Home" />
         </Switch>
     );
 }

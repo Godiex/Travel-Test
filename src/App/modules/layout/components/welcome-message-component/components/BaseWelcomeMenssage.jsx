@@ -1,14 +1,30 @@
-import React from 'react'
-import { Layout } from "antd";
-import  "../css/footer.css";
+import React from 'react';
+import '../../../../../App.css';
+import '../css/welcome-menssage.css';
+import {Button} from "antd";
+import video from "../../../../../../Includes/videos/video-1.mp4";
+import {shallowEqual, useSelector} from "react-redux";
+import {Link as LinkComponent} from "react-router-dom";
 
-const { Footer } = Layout;
+const BannerComponent = () => {
+    const menuItem = useSelector(state => state?.menu[0], shallowEqual);
 
-const BaseFooterComponent = () => {
     return (
-        <Footer className = "base-footer">
-            © 2021-2021 Prueba Tecnica - Diego Villa. IT Globals
-        </Footer>
+        <div className='hero-container'>
+            <video src={video} autoPlay loop muted />
+            <h1>BIENVENIDO</h1>
+            <p>¿ por que esperas para salir ?</p>
+            <Button
+                size={"small"}
+                shape={"round"}
+                color={"#fff"}
+            >
+                <LinkComponent to={`/Travel/RegisterTravel/${menuItem?.id}`}>
+                    EMPIEZA A CONOCER EL MUNDO
+                </LinkComponent>
+            </Button>
+        </div>
     );
 }
-export default BaseFooterComponent;
+
+export default BannerComponent;

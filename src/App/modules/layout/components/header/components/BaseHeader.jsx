@@ -1,15 +1,19 @@
 import React from "react";
-import "../css/header.css"
-import { Layout } from "antd";
+import "../css/header.css";
+import logo from  "../../../../../../Includes/icons/Logo.png";
+import {Link} from "react-router-dom";
 
-const { Header } = Layout;
-
-const BaseHeaderComponent = ( ) => {
+const BaseHeaderComponent = ({menu}) => {
     return (
         <>
-            <Header className="base-header" >
-                <div className="logo" />
-            </Header>
+            <header>
+                <div className="logo">
+                    <Link to={"/Home"}>
+                        <img src={logo} alt="" />
+                    </Link>
+                </div>
+                {menu}
+            </header>
         </>
     );
 }

@@ -1,10 +1,12 @@
 import React from "react";
-import Footer from "./components/BaseFooter";
+import BannerComponent from "./components/BaseWelcomeMenssage";
 
-const FooterComponent = () => {
+const WelcomeMessageComponent = () => {
     return (
-        <Footer />
+        <>
+            <BannerComponent />
+        </>
     );
 }
 
-export default FooterComponent;
+export default WelcomeMessageComponent;

@@ -1,8 +1,11 @@
 import React from "react";
+import RegisterPorposeTravel from "./components/RegisterPorposeTravel";
 
 const RegisterTravelComponent = () => {
     return (
-        <h1>hola soy el registro de viaje</h1>
+        <>
+            <RegisterPorposeTravel />
+        </>
     );
 }
 
